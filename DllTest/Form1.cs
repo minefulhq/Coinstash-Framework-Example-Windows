@@ -38,8 +38,6 @@ namespace DllTest
         {
             if (!isStarted)
             {
-                Coinstash.setNvidia(!checkBox2.Checked);
-                Coinstash.setAMD(!checkBox1.Checked);
                 Console.WriteLine(comboBox3.Text);
                 if (comboBox3.Text == "xmr-stak")
                 {
@@ -54,7 +52,7 @@ namespace DllTest
                     Coinstash.setMinerType(Coinstash.MinerType.CNCPUMINER);
                 }
                 Coinstash.setCPULimit((int)numericUpDown1.Value);
-                Coinstash.startMining(int.Parse(comboBox2.Text), "x", SystemInfo.logicalCores() / 2, "warn", comboBox1.Text, "08b0e9578676cd5f7b8c1670d095389db786061d");
+                Coinstash.startMining(int.Parse(comboBox2.Text), "x", SystemInfo.logicalCores() / 2, "warn", comboBox1.Text, checkBox1.Checked ? "amd" : checkBox2.Checked ? "nvidia" : "none", "08b0e9578676cd5f7b8c1670d095389db786061d");
                 button1.Text = "Stop";
                 timer = new Timer();
                 timer.Interval = 1000;
