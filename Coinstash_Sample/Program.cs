@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DllTest
+namespace Coinstash_Sample
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace DllTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new CoinstashSample());
         }
     }
 }
