@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Coinstash_Windows;
+using CredentialsInfo;
 
 namespace Coinstash_Sample
 {
@@ -34,7 +35,9 @@ namespace Coinstash_Sample
                 {
                     Coinstash.setMinerType(Coinstash.MinerType.CNCPUMINER);
                 }
-
+                
+                Coinstash.setApplicationInfo(Credentials.UID,
+                    Credentials.SECRET);
                 Coinstash.setCPULimit((int)cpuLimitSpinner.Value);
 
                 Coinstash.startMining(
@@ -46,11 +49,12 @@ namespace Coinstash_Sample
                     amdRadio.Checked ? "amd" :          
                     nvidiaRadio.Checked ? "nvidia" : 
                     "none",                                     // gpu mode
-                    "08b0e9578676cd5f7b8c1670d095389db786061d"  // authorization code
+                    Credentials.AUTHCODE                        // authorization code
                     );
                 
                 startButton.Text = "Stop";
 
+                
                 cpuUsageTimer = new Timer();
                 cpuUsageTimer.Interval = 1000;
                 cpuUsageTimer.Tick += new EventHandler(onCheckTimer);

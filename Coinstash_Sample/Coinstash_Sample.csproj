@@ -73,6 +73,7 @@
     <Compile Include="CoinstashSample.Designer.cs">
       <DependentUpon>CoinstashSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="Credentials.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CoinstashSample.resx">
