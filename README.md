@@ -15,3 +15,6 @@ For broader support and compatibility, you should also include the following .Dl
 
 You can get these dependencies from the [Releases](https://github.com/minefulhq/Coinstash-Framework-Example-Windows/releases) tab
 
+# License key
+
+You will need a license key to be able to activate the miner in this test project. Contact greg@mineful.co for information
