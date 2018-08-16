@@ -50,9 +50,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Coinstash_Windows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Upwork\Steve\Coinstash-Windows\Coinstash_Windows\bin\Release\Coinstash_Windows.dll</HintPath>
+    <Reference Include="Coinstash_Windows">
+      <HintPath>..\..\Coinstash-Windows\Coinstash_Windows\bin\Release\Coinstash_Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

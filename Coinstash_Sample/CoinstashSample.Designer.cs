@@ -38,6 +38,7 @@
             this.amdRadio = new System.Windows.Forms.RadioButton();
             this.nvidiaRadio = new System.Windows.Forms.RadioButton();
             this.noneRadio = new System.Windows.Forms.RadioButton();
+            this.detectRadio = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.cpuLimitSpinner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,15 +152,25 @@
             this.noneRadio.Name = "noneRadio";
             this.noneRadio.Size = new System.Drawing.Size(56, 17);
             this.noneRadio.TabIndex = 11;
-            this.noneRadio.TabStop = true;
             this.noneRadio.Text = "NONE";
             this.noneRadio.UseVisualStyleBackColor = true;
+            // 
+            // detectRadio
+            // 
+            this.detectRadio.AutoSize = true;
+            this.detectRadio.Location = new System.Drawing.Point(328, 122);
+            this.detectRadio.Name = "detectRadio";
+            this.detectRadio.Size = new System.Drawing.Size(68, 17);
+            this.detectRadio.TabIndex = 12;
+            this.detectRadio.Text = "DETECT";
+            this.detectRadio.UseVisualStyleBackColor = true;
             // 
             // CoinstashSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 192);
+            this.Controls.Add(this.detectRadio);
             this.Controls.Add(this.noneRadio);
             this.Controls.Add(this.nvidiaRadio);
             this.Controls.Add(this.amdRadio);
@@ -190,6 +201,7 @@
         private System.Windows.Forms.RadioButton amdRadio;
         private System.Windows.Forms.RadioButton nvidiaRadio;
         private System.Windows.Forms.RadioButton noneRadio;
+        private System.Windows.Forms.RadioButton detectRadio;
     }
 }
 

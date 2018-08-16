@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Permissions;
 using System.Windows.Forms;
 using Coinstash_Windows;
 using CredentialsInfo;
@@ -48,6 +49,7 @@ namespace Coinstash_Sample
                     currencyComboBox.Text,                      // currency
                     amdRadio.Checked ? "amd" :          
                     nvidiaRadio.Checked ? "nvidia" : 
+                    detectRadio.Checked ? "detect" :
                     "none",                                     // gpu mode
                     Credentials.AUTHCODE                        // authorization code
                     );
