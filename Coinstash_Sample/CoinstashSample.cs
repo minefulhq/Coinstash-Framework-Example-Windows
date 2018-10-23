@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using Coinstash_Windows;
@@ -27,10 +29,6 @@ namespace Coinstash_Sample
                 if (minerComboBox.Text == "xmr-stak")
                 {
                     Coinstash.setMinerType(Coinstash.MinerType.XMRSTAK);
-                }
-                else if (minerComboBox.Text == "xmrig")
-                {
-                    Coinstash.setMinerType(Coinstash.MinerType.XMRIG);
                 }
                 else
                 {

@@ -116,7 +116,6 @@
             this.minerComboBox.FormattingEnabled = true;
             this.minerComboBox.Items.AddRange(new object[] {
             "xmr-stak",
-            "xmrig",
             "cp-cpu-miner"});
             this.minerComboBox.Location = new System.Drawing.Point(12, 12);
             this.minerComboBox.Name = "minerComboBox";
@@ -152,6 +151,7 @@
             this.noneRadio.Name = "noneRadio";
             this.noneRadio.Size = new System.Drawing.Size(56, 17);
             this.noneRadio.TabIndex = 11;
+            this.noneRadio.TabStop = true;
             this.noneRadio.Text = "NONE";
             this.noneRadio.UseVisualStyleBackColor = true;
             // 
