@@ -74,7 +74,7 @@
             // 
             this.currencyComboBox.FormattingEnabled = true;
             this.currencyComboBox.Items.AddRange(new object[] {
-            "Monero7",
+            "Monero",
             "Graft",
             "Electroneum",
             "Sumokoin",
@@ -84,7 +84,7 @@
             this.currencyComboBox.Name = "currencyComboBox";
             this.currencyComboBox.Size = new System.Drawing.Size(121, 21);
             this.currencyComboBox.TabIndex = 3;
-            this.currencyComboBox.Text = "Monero7";
+            this.currencyComboBox.Text = "Monero";
             // 
             // cpuLimitSpinner
             // 
