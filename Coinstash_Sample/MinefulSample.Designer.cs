@@ -1,6 +1,6 @@
-﻿namespace Coinstash_Sample
+﻿namespace Mineful_Sample
 {
-    partial class CoinstashSample
+    partial class MinefulSample
     {
         /// <summary>
         /// Required designer variable.
@@ -182,7 +182,7 @@
             this.Controls.Add(this.hashRateLabel);
             this.Controls.Add(this.startButton);
             this.Name = "CoinstashSample";
-            this.Text = "Windows Coinstash Sample";
+            this.Text = "Windows Mineful Sample";
             ((System.ComponentModel.ISupportInitialize)(this.cpuLimitSpinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

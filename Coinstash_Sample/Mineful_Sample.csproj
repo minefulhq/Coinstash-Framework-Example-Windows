@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DFBC9B04-57EF-4D8B-874F-979DEDC3CD05}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Coinstash_Sample</RootNamespace>
-    <AssemblyName>Coinstash_Sample</AssemblyName>
+    <RootNamespace>Mineful_Sample</RootNamespace>
+    <AssemblyName>Mineful_Sample</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,7 +50,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>20443F10589159EA1C9F532DA3414490BE3CF8F1</ManifestCertificateThumbprint>
@@ -82,8 +82,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Coinstash_Windows">
-      <HintPath>..\..\coinstash-windows\Coinstash_Windows\bin\Debug\Coinstash_Windows.dll</HintPath>
+    <Reference Include="Mineful_Windows">
+      <HintPath>..\..\Coinstash-Windows\Coinstash_Windows\bin\Release\Mineful_Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -98,17 +98,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoinstashSample.cs">
+    <Compile Include="MinefulSample.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoinstashSample.Designer.cs">
-      <DependentUpon>CoinstashSample.cs</DependentUpon>
+    <Compile Include="MinefulSample.Designer.cs">
+      <DependentUpon>MinefulSample.cs</DependentUpon>
     </Compile>
     <Compile Include="Credentials.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CoinstashSample.resx">
-      <DependentUpon>CoinstashSample.cs</DependentUpon>
+    <EmbeddedResource Include="MinefulSample.resx">
+      <DependentUpon>MinefulSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,7 +123,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Coinstash_Sample_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -3,15 +3,15 @@ using System.IO;
 using System.Reflection;
 using System.Security.Permissions;
 using System.Windows.Forms;
-using Coinstash_Windows;
+using Mineful_Windows;
 using CredentialsInfo;
 
-namespace Coinstash_Sample
+namespace Mineful_Sample
 {
-    public partial class CoinstashSample : Form
+    public partial class MinefulSample : Form
     {
         Timer cpuUsageTimer;
-        public CoinstashSample()
+        public MinefulSample()
         {
             InitializeComponent();
             this.FormClosing += onAppClosing;
@@ -19,27 +19,27 @@ namespace Coinstash_Sample
 
         private void onAppClosing(object sender, FormClosingEventArgs e)
         {
-            Coinstash.stopMining();                             // Stop mining
+            Mineful.stopMining();                             // Stop mining
         }
 
         private void onStart(object sender, EventArgs e)
         {
-            if (!Coinstash.currentMinerStatus())                // Coinstash isn't working
+            if (!Mineful.currentMinerStatus())                // Mineful isn't working
             {
                 if (minerComboBox.Text == "xmr-stak")
                 {
-                    Coinstash.setMinerType(Coinstash.MinerType.XMRSTAK);
+                    Mineful.setMinerType(Mineful.MinerType.XMRSTAK);
                 }
                 else
                 {
-                    Coinstash.setMinerType(Coinstash.MinerType.CNCPUMINER);
+                    Mineful.setMinerType(Mineful.MinerType.CNCPUMINER);
                 }
-                
-                Coinstash.setApplicationInfo(Credentials.UID,
-                    Credentials.SECRET);
-                Coinstash.setCPULimit((int)cpuLimitSpinner.Value);
 
-                Coinstash.startMining(
+                Mineful.setApplicationInfo(Credentials.UID,
+                    Credentials.SECRET);
+                Mineful.setCPULimit((int)cpuLimitSpinner.Value);
+
+                Mineful.startMining(
                     int.Parse(portComboBox.Text),               // port number
                     "x",                                        // password
                     SystemInfo.logicalCores() / 2,              // number of cores
@@ -62,7 +62,7 @@ namespace Coinstash_Sample
             }
             else
             {
-                Coinstash.stopMining();
+                Mineful.stopMining();
 
                 startButton.Text = "Start";
                 cpuUsageTimer.Enabled = false;
@@ -72,8 +72,8 @@ namespace Coinstash_Sample
         private void onCheckTimer(object sender, EventArgs e)
         {                
             hashRateLabel.Text = 
-                "Hash Rate: " + Coinstash.getHashRate().ToString() + " Hash/S\n" +
-                "Accepted:  " + Coinstash.getAccepted().ToString() + " \n";
+                "Hash Rate: " + Mineful.getHashRate().ToString() + " Hash/S\n" +
+                "Accepted:  " + Mineful.getAccepted().ToString() + " \n";
             cpuUsageLabel.Text = "CPU Usage: " + SystemInfo.cpuUsage().ToString() + " %\n";
         }
     }
