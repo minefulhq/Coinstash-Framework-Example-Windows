@@ -6,7 +6,7 @@ For more complete overview of Framework features, please [See Our Documentation]
 
 # Dependencies
 
-You need the Windows Library - `Coinstash_Windows.Dll`
+You need the Windows Library - `Mineful_Windows.Dll`
 
 For broader support and compatibility, you should also include the following .Dll's in your project
 
