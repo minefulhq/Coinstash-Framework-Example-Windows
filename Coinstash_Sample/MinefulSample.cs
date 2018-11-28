@@ -42,6 +42,15 @@ namespace Mineful_Sample
                     startButton.Text = "Detecting Port...";
                     Mineful.startTestingWithOrders(Credentials.AUTHCODE, new OnFinishedTesting((port) =>
                     {
+                        if (port == -1)
+                        {
+                            startButton.Invoke(new Action(() => {
+                                startButton.Text = "Start";
+                                startButton.Enabled = true;
+                            }));
+                            
+                            return;
+                        }
                         
                         startButton.Invoke(new Action(() => {
                             startButton.Text = "Stop";
