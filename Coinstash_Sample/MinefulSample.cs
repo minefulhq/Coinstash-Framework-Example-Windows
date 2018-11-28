@@ -15,6 +15,11 @@ namespace Mineful_Sample
         {
             InitializeComponent();
             this.FormClosing += onAppClosing;
+
+            cpuUsageTimer = new Timer();
+            cpuUsageTimer.Interval = 1000;
+            cpuUsageTimer.Tick += new EventHandler(onCheckTimer);
+            cpuUsageTimer.Enabled = true;
         }
 
         private void onAppClosing(object sender, FormClosingEventArgs e)
@@ -26,46 +31,57 @@ namespace Mineful_Sample
         {
             if (!Mineful.currentMinerStatus())                // Mineful isn't working
             {
-                if (minerComboBox.Text == "xmr-stak")
-                {
-                    Mineful.setMinerType(Mineful.MinerType.XMRSTAK);
-                }
-                else
-                {
-                    Mineful.setMinerType(Mineful.MinerType.CNCPUMINER);
-                }
 
                 Mineful.setApplicationInfo(Credentials.UID,
                     Credentials.SECRET);
                 Mineful.setCPULimit((int)cpuLimitSpinner.Value);
 
-                Mineful.startMining(
-                    int.Parse(portComboBox.Text),               // port number
-                    "x",                                        // password
-                    SystemInfo.logicalCores() / 2,              // number of cores
-                    "warn",                                     // slow memory option
-                    currencyComboBox.Text,                      // currency
-                    amdRadio.Checked ? "amd" :          
-                    nvidiaRadio.Checked ? "nvidia" : 
-                    detectRadio.Checked ? "detect" :
-                    "none",                                     // gpu mode
-                    Credentials.AUTHCODE                        // authorization code
+                if (portComboBox.Text == "Detect")
+                {
+                    startButton.Enabled = false;
+                    startButton.Text = "Detecting Port...";
+                    Mineful.startTestingWithOrders(Credentials.AUTHCODE, new OnFinishedTesting((port) =>
+                    {
+                        
+                        startButton.Invoke(new Action(() => {
+                            startButton.Text = "Stop";
+                            startButton.Enabled = true;
+                            }));
+                        Mineful.startMiningWithOrders(
+                            port,                                       // port number
+                            "x",                                        // password
+                            SystemInfo.logicalCores() / 2,              // number of cores
+                            "warn",                                     // slow memory option
+                            amdRadio.Checked ? "amd" :
+                            nvidiaRadio.Checked ? "nvidia" :
+                            detectRadio.Checked ? "detect" :
+                            "none",                                     // gpu mode
+                            Credentials.AUTHCODE                        // authorization code
+                       );
+                    }));
+                }
+                else
+                {
+                    Mineful.startMiningWithOrders(
+                        Int32.Parse(portComboBox.Text),                 // port number
+                        "x",                                            // password
+                        SystemInfo.logicalCores() / 2,                  // number of cores
+                        "warn",                                         // slow memory option
+                        amdRadio.Checked ? "amd" :
+                        nvidiaRadio.Checked ? "nvidia" :
+                        detectRadio.Checked ? "detect" :
+                        "none",                                         // gpu mode
+                        Credentials.AUTHCODE                            // authorization code
                     );
-                
-                startButton.Text = "Stop";
+                    startButton.Text = "Stop";
+                }
 
-                
-                cpuUsageTimer = new Timer();
-                cpuUsageTimer.Interval = 1000;
-                cpuUsageTimer.Tick += new EventHandler(onCheckTimer);
-                cpuUsageTimer.Enabled = true;
             }
             else
             {
                 Mineful.stopMining();
 
                 startButton.Text = "Start";
-                cpuUsageTimer.Enabled = false;
             }
         }
 

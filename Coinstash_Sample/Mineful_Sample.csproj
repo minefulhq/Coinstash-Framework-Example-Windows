@@ -82,7 +82,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mineful_Windows">
+    <Reference Include="Mineful_Windows, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Coinstash-Windows\Coinstash_Windows\bin\Release\Mineful_Windows.dll</HintPath>
     </Reference>
     <Reference Include="System" />
